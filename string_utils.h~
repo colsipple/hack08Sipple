@@ -1,0 +1,12 @@
+/*
+ *Author(s): Collin Sipple
+ *Date Created: 10/10/2018
+ *Date Modified: 10/10/2018
+ *Purpose: Provide functions that copies, modifies, and produces strings from
+ *given arrays (namely strings)
+ */
+#include<stdlib.h>
+#include<stdio.h>
+
+//Replaces a given character in a string with another one.
+void replaceChar(char *s, char oldChar, char newChar);
