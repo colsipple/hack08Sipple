@@ -47,11 +47,17 @@ void removeChar(char *s, char c) {
   if(s == NULL) {
 	return;
   }
-  
+
   for(int i = 0; i < strlen(s); i++) {
 	if(s[i] == c) {
 	  for(int j = i; j < strlen(s); j++) {
 		s[j] = s[j + 1];
+	  }
+      //Make sure that repeating characters are also removed	
+      while(s[i] == c) {
+		for(int j = i; j < strlen(s); j++) {
+		  s[j] = s[j + 1];
+	    }
 	  }
 	} else if(s[i] == '\0') {
 	  for(int j = i; j < strlen(s); j++) {
@@ -63,6 +69,8 @@ void removeChar(char *s, char c) {
   return;
 }
 
-char * removeCharCopy(const char *s, char c);
+char * removeCharCopy(const char *s, char c) {
+  return;
+}
 
 char **lengthSplit(const char *s, int n);

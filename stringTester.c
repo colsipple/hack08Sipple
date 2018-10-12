@@ -66,6 +66,26 @@ int main(int argc, char **argv) {
 	printf("Case %d failed! Expected following string!\n", numCases);
 	printf("%s\n", newString);
   }
+  //Test for NULL error
+  numCases++;
+  char *replaceNullS = replaceCharCopy(NULL, 'H', 'B');
+  if(replaceNullS == NULL) {
+	printf("Case %d passed!\n", numCases);
+	casePassed++;
+  } else {
+	printf("Case %d failed! Expected to return NULL!\n", numCases);
+  }
+  //Test for no change
+  numCases++;
+  char *newNoChange = replaceCharCopy(sampString, 'q', 'g');
+  printf("Your new string reads:\n");
+  printf("%s\n", newNoChange);
+  if(strcmp(newNoChange, "Hello my fufes!") == 0) {
+	printf("Case %d passed!\n", numCases);
+	casePassed++;
+  } else {
+	printf("Case %d failed! Expected no change!\n", numCases);
+  }
   
   //Test for function removeChar()
   //Test for correct usage
@@ -75,8 +95,34 @@ int main(int argc, char **argv) {
   removeChar(sampString, 'e');
   printf("Your string now reads:\n");
   printf("%s\n", sampString);
-  casePassed++;
-  
+  if(strcmp(sampString, "Hllo my fufs!") == 0) {
+	printf("Case %d passed!\n", numCases);
+	casePassed++;
+  } else {
+	printf("Case %d failed! Expected following string:\n", numCases);
+	printf("Hllo my fufs!\n");
+  }
+  //Test for NULL error
+  char *removeNullS = NULL;
+  numCases++;
+  removeChar(removeNullS, 'E');
+  if(removeNullS == NULL) {
+	printf("Case %d passed!\n", numCases);
+	casePassed++;
+  } else {
+	printf("Case %d failed! Expected to return NULL!\n", numCases);
+  }
+  //Test for no change
+  numCases++;
+  removeChar(sampString, 'e');
+  printf("Your string now reads:\n");
+  printf("%s\n", sampString);
+  if(strcmp(sampString, "Hllo my fufs!") == 0) {
+	printf("Case %d passed!\n", numCases);
+	casePassed++;
+  } else {
+	printf("Case %d failed! Expected no change!\n", numCases);
+  }
   
   //Test for function removeCharCopy()
   //Test for correct usage
