@@ -1,7 +1,7 @@
 /*
- *Author(s): Collin Sipple, Victor Nguyen
+ *Author(s): Collin Sipple, Victor Nguyen, Tony Ong
  *Date Created: 10/10/2018
- *Date Modified: 10/11/2018
+ *Date Modified: 10/12/2018
  *Purpose: Provide functions that copies, modifies, and produces strings from
  *given arrays (namely strings)
  */
@@ -22,5 +22,6 @@ void removeChar(char *s, char c);
 //Returns a shortened copy of a copy of the original string using removeChar()
 char * removeCharCopy(const char *s, char c);
 
-//
+//Returns an array of strings(where each row is its own string) where
+//Each string length is determined by n, with some stragglers
 char **lengthSplit(const char *s, int n);
